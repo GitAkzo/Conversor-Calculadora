@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor & Calculadora</title>
+    
+    <!-- Fontes e Ícones -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    
+</head>
+<body>
+
+    <!-- HEADER GLOBAL DO PORTFÓLIO -->
+    <header class="main-header">
+        <div class="header-left">
+            <!-- Link de retorno -->
+            <a href="https://meu-portfolio-react-eight-plum.vercel.app/" target="_blank">
+                <span class="material-symbols-outlined">arrow_back</span>
+                <span>Portfólio</span>
+            </a>
+        </div>
+
+        <nav class="header-center">
+            <ul>
+                <li><a href="https://meu-portfolio-react-eight-plum.vercel.app/projetos/8" target="_blank">Detalhes do Projeto</a></li>
+                <li><a href="https://github.com/GitAkzo/Conversor-Calculadora" target="_blank">Código Fonte (GitHub)</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right">
+            <!-- Botão de Tema -->
+            <button id="theme-toggle" class="icon-btn" aria-label="Alternar Tema">
+                <span class="material-symbols-outlined" id="theme-icon">dark_mode</span>
+            </button>
+            <!-- Botão Menu Hambúrguer (Mobile) -->
+            <button id="menu-toggle" class="icon-btn mobile-only" aria-label="Abrir Menu">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MENU MOBILE -->
+    <nav id="mobile-menu" class="mobile-menu">
+        <a href="https://meu-portfolio-react-eight-plum.vercel.app/projetos/8" target="_blank">Detalhes do Projeto</a>
+        <a href="https://github.com/GitAkzo/Conversor-Calculadora" target="_blank">Código Fonte (GitHub)</a>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="app-title">
+        <h1>Conversor & Calculadora</h1>
+        <p>Dois projetos clássicos de lógica e conversão, refatorados e unificados em uma única interface moderna.</p>
+    </div>
+
+    <main class="container">
+        
+        <!-- Navegação por Abas (Tabs) -->
+        <nav class="tabs-nav">
+            <button id="tab-conversor" class="tab-btn active">Conversor</button>
+            <button id="tab-calculadora" class="tab-btn">Calculadora</button>
+        </nav>
+
+        <!-- ABA DO CONVERSOR -->
+        <section id="panel-conversor" class="tool-panel">
+            <div class="panel-header">
+                <h2>Conversor de Moedas</h2>
+                <p class="subtitle">Cotações atualizadas via API pública</p>
+            </div>
+            
+            <div class="form-group">
+                <label for="amount">Valor a Converter</label>
+                <!-- Alterado para type="text" com inputmode para mobile exibir teclado numérico -->
+                <input type="text" id="amount" placeholder="Ex: 1.500" value="1" inputmode="numeric">
+            </div>
+
+            <div class="currency-selects">
+                <div class="form-group">
+                    <label for="from-currency">De</label>
+                    <select id="from-currency">
+                        <option value="BRL" selected>BRL - Real</option>
+                        <option value="USD">USD - Dólar</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - Libra</option>
+                        <option value="JPY">JPY - Iene</option>
+                        <option value="CAD">CAD - Dól. Canadense</option>
+                        <option value="AUD">AUD - Dól. Australiano</option>
+                        <option value="CHF">CHF - Franco</option>
+                        <option value="CNY">CNY - Yuan</option>
+                        <option value="ARS">ARS - Peso Arg.</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="to-currency">Para</label>
+                    <select id="to-currency">
+                        <option value="USD" selected>USD - Dólar</option>
+                        <option value="BRL">BRL - Real</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - Libra</option>
+                        <option value="JPY">JPY - Iene</option>
+                        <option value="CAD">CAD - Dól. Canadense</option>
+                        <option value="AUD">AUD - Dól. Australiano</option>
+                        <option value="CHF">CHF - Franco</option>
+                        <option value="CNY">CNY - Yuan</option>
+                        <option value="ARS">ARS - Peso Arg.</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="btn-convert" class="action-btn">Converter Valores</button>
+
+            <div class="result-box">
+                <p id="conversion-result">Clique em converter</p>
+                <span id="update-time" class="timestamp">Aguardando operação...</span>
+            </div>
+        </section>
+
+        <!-- ABA DA CALCULADORA -->
+        <section id="panel-calculadora" class="tool-panel hidden">
+            <div class="panel-header">
+                <h2>Calculadora</h2>
+                <p class="subtitle">Operações aritméticas com histórico visual</p>
+            </div>
+
+            <div class="calculator-wrapper">
+                <div class="calc-display" id="calc-display">0</div>
+                <div class="calc-grid">
+                    <button class="btn-calc btn-clear" data-action="clear">C</button>
+                    <button class="btn-calc btn-op" data-action="operator" data-val="/">÷</button>
+                    <button class="btn-calc btn-op" data-action="operator" data-val="*">×</button>
+                    <button class="btn-calc btn-op" data-action="delete">⌫</button>
+
+                    <button class="btn-calc" data-action="number">7</button>
+                    <button class="btn-calc" data-action="number">8</button>
+                    <button class="btn-calc" data-action="number">9</button>
+                    <button class="btn-calc btn-op" data-action="operator" data-val="-">-</button>
+
+                    <button class="btn-calc" data-action="number">4</button>
+                    <button class="btn-calc" data-action="number">5</button>
+                    <button class="btn-calc" data-action="number">6</button>
+                    <button class="btn-calc btn-op" data-action="operator" data-val="+">+</button>
+
+                    <button class="btn-calc" data-action="number">1</button>
+                    <button class="btn-calc" data-action="number">2</button>
+                    <button class="btn-calc" data-action="number">3</button>
+                    <button class="btn-calc btn-equals" data-action="calculate">=</button>
+
+                    <button class="btn-calc btn-zero" data-action="number">0</button>
+                    <button class="btn-calc" data-action="decimal">.</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <p>&copy; 2026 | Desenvolvido por Paulo Raséc</p>
+        <p class="attribution">
+            Inspirado na Imersão Dev da Alura &bull; Reconstruído do zero com arquitetura modular e UI/UX moderna.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
