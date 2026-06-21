@@ -52,3 +52,31 @@ Como o projeto utiliza apenas tecnologias nativas do navegador, não é necessá
 
 3. Abra o arquivo `index.html` diretamente no seu navegador de preferência, ou utilize a extensão Live Server do VS Code para emular um servidor local.
 
+---
+
+### 💡 Não quer baixar o código?
+Sem problemas! Você pode testar a aplicação agora mesmo direto no seu navegador:
+
+[![Acessar Projeto Online](https://img.shields.io/badge/Acessar_Projeto_Online-a855f7?style=for-the-badge&logo=vercel&logoColor=white)]([https://gitakzo.github.io/Conversor-Calculadora/])
+
+Para mais detalhes, acesse a página do projeto no meu portfólio:
+
+[![Ver Detalhes](https://img.shields.io/badge/Página_do_Projeto-a855f7?style=for-the-badge)]([https://meu-portfolio-react-eight-plum.vercel.app/projetos/1])
+
+---
+
+## 👨‍💻 Autor
+
+**Paulo Rasec** | Engenheiro de Software | Desenvolvedor Web | Pós-graduando em Direito Digital e LGPD
+
+[![Meu Portfólio](https://img.shields.io/badge/%3C%3E_Meu_Portfólio-a855f7?style=for-the-badge)](https://meu-portfolio-react-eight-plum.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rasec-silva/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/GitAkzo)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5541999337207)
+[![E-mail](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:paulorasec2021@outlook.com)
+
+---
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
