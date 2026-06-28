@@ -1,6 +1,6 @@
 # 🛠️ Conversor & Calculadora
 
-![Preview do Projeto](./Conversor%20&%20Calculadora.png)
+![Preview do Projeto](./Conversor%20&%20Calculadora.webp)
 
 
 Um painel modular de utilitários contendo um **Conversor de Moedas** em tempo real e uma **Calculadora Matemática** avançada. 
